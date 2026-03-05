@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Mum 🎂</title>
+
+<style>
+body{
+    background: linear-gradient(to right,#ffd6e0,#fff5f7);
+    font-family: Arial, sans-serif;
+    text-align:center;
+    overflow:hidden;
+}
+
+/* Birthday Card */
+.card{
+    background:white;
+    width:360px;
+    margin:100px auto;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0px 4px 20px rgba(0,0,0,0.2);
+    position:relative;
+    z-index:2;
+}
+
+img{
+    width:100%;
+    border-radius:15px;
+}
+
+h1{
+    color:#ff4d6d;
+}
+
+p{
+    font-size:18px;
+}
+
+/* Floating Hearts */
+.heart{
+    position: fixed;
+    bottom:-10px;
+    font-size:24px;
+    animation: float 6s linear infinite;
+}
+
+@keyframes float{
+    0%{
+        transform: translateY(0);
+        opacity:1;
+    }
+    100%{
+        transform: translateY(-100vh);
+        opacity:0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Birthday Music -->
+<audio autoplay loop>
+<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
+
+<div class="card">
+
+<img src="mom.jpg" alt="Beautiful Mum 💖">
+
+<h1>🎉 Happy Birthday Mum 🎂</h1>
+
+<p>💐 Dear <b>Mummy</b> 💐</p>
+
+<p>
+Happy Birthday, mummy ❤️I want to use the moment to say , Thank you for your endless love, guidance, and warmth.
+You make life brighter every single day. ✨
+</p>
+
+<p>
+Wishing you all the joy, laughter, and happiness in the world today and always! 🎉🥰💖
+</p>
+
+</div>
+
+<script>
+function createHeart(){
+    const heart=document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML="💖";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.animationDuration=(Math.random()*3+3)+"s";
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },6000);
+}
+
+setInterval(createHeart,300);
+</script>
+
+</body>
+</html>
